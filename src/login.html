@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login to Eventify and discover amazing events.">
+  <title>Login | Eventify</title>
+  <link rel="stylesheet" href="./login.output.css">
+</head>
+
+<body class="min-h-screen bg-white">
+
+  <main class="grid min-h-screen grid-cols-1 lg:grid-cols-2">
+
+    <!-- LEFT: WELCOME -->
+    <section class="relative flex min-h-[300px] items-center justify-center overflow-hidden bg-[#211525] px-8 py-16 text-center text-white lg:min-h-screen">
+
+      <div class="absolute inset-0 bg-gradient-to-br from-[#32152f] via-[#24152b] to-black"></div>
+
+      <div class="absolute -left-20 top-20 h-72 w-72 rounded-full bg-pink-600/20 blur-3xl"></div>
+      <div class="absolute -right-20 bottom-10 h-72 w-72 rounded-full bg-purple-600/20 blur-3xl"></div>
+
+      <div class="relative z-10 max-w-lg">
+
+        <p class="mb-6 text-sm font-bold tracking-[6px] text-pink-400">
+          EVENTIFY
+        </p>
+
+        <h1 class="mb-6 text-5xl font-bold md:text-6xl">
+          Welcome <span class="text-pink-400">Back!</span>
+        </h1>
+
+        <p class="text-base leading-8 text-gray-300 md:text-lg">
+          Your next unforgettable experience starts here.
+          Discover events, connect with people and create memories.
+        </p>
+
+        <div class="mt-10 flex justify-center gap-2">
+          <span class="h-2 w-8 rounded-full bg-pink-500"></span>
+          <span class="h-2 w-2 rounded-full bg-white/40"></span>
+          <span class="h-2 w-2 rounded-full bg-white/40"></span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- RIGHT: LOGIN FORM -->
+    <section class="flex items-center justify-center px-6 py-14 sm:px-12 lg:px-16">
+
+      <div class="w-full max-w-md">
+
+        <div class="mb-10">
+          <h2 class="text-4xl font-bold text-gray-900">
+            Log In
+          </h2>
+
+          <p class="mt-3 text-gray-500">
+            Welcome back! Please enter your details.
+          </p>
+        </div>
+
+        <form id="loginForm" class="space-y-6" novalidate>
+
+          <div>
+            <label for="email" class="mb-2 block text-sm font-semibold text-gray-700">
+              Email Address
+            </label>
+
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="Enter your email"
+              required
+              class="w-full rounded-xl border border-gray-200 px-4 py-4 outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-100"
+            >
+
+            <p id="emailError" class="mt-1 text-sm text-red-500"></p>
+          </div>
+
+          <div>
+            <div class="mb-2 flex items-center justify-between">
+              <label for="password" class="text-sm font-semibold text-gray-700">
+                Password
+              </label>
+
+              <button
+                type="button"
+                id="forgotPassword"
+                class="text-sm font-semibold text-pink-600 hover:underline"
+              >
+                Forgot password?
+              </button>
+            </div>
+
+            <div class="relative">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                placeholder="Enter your password"
+                required
+                class="w-full rounded-xl border border-gray-200 px-4 py-4 pr-16 outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-100"
+              >
+
+              <button
+                type="button"
+                id="togglePassword"
+                aria-label="Show password"
+                class="absolute right-4 top-1/2 -translate-y-1/2 text-sm font-semibold text-pink-600"
+              >
+                Show
+              </button>
+            </div>
+
+            <p id="passwordError" class="mt-1 text-sm text-red-500"></p>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <input
+              id="remember"
+              type="checkbox"
+              class="h-4 w-4 accent-pink-600"
+            >
+
+            <label for="remember" class="text-sm text-gray-600">
+              Remember me
+            </label>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full rounded-xl bg-pink-600 py-4 font-bold text-white transition hover:bg-pink-700 hover:shadow-lg active:scale-[0.98]"
+          >
+            Log In
+          </button>
+
+          <div class="flex items-center gap-4">
+            <div class="h-px flex-1 bg-gray-200"></div>
+            <span class="text-sm text-gray-400">OR</span>
+            <div class="h-px flex-1 bg-gray-200"></div>
+          </div>
+
+          <button
+            type="button"
+            id="googleLogin"
+            class="flex w-full items-center justify-center gap-3 rounded-xl border border-gray-200 py-4 font-semibold text-gray-700 transition hover:bg-gray-50"
+          >
+            <span class="text-xl font-bold text-blue-600">G</span>
+            Continue with Google
+          </button>
+
+        </form>
+
+        <p id="message" role="status" aria-live="polite" class="mt-5 text-center text-sm"></p>
+
+        <p class="mt-8 text-center text-sm text-gray-500">
+          Don't have an account?
+
+          <a
+            href="#"
+            id="signupLink"
+            class="font-bold text-pink-600 hover:underline"
+          >
+            Sign Up
+          </a>
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="./login.jsx"></script>
+
+</body>
+</html>
